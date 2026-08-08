@@ -1,0 +1,35 @@
+body{
+    background:#f5f7fb;
+    font-family:'Poppins',sans-serif;
+}
+
+.dashboard-card{
+    border:none;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:0.3s;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-8px);
+}
+
+.dashboard-card h3{
+    font-size:45px;
+}
+
+.dashboard-card h5{
+    margin-top:15px;
+    color:#2563eb;
+    font-weight:600;
+}
+
+.dashboard-card p{
+    color:#666;
+}
+
+.btn-primary{
+    border-radius:10px;
+}

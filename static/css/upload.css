@@ -1,0 +1,27 @@
+body{
+    background:#f8fafc;
+    font-family:'Poppins',sans-serif;
+}
+
+.upload-card{
+    max-width:600px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.upload-card h2{
+    font-weight:700;
+}
+
+.form-control{
+    height:50px;
+}
+
+.btn-primary{
+    height:50px;
+    border-radius:10px;
+    font-weight:600;
+}

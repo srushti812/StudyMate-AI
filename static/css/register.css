@@ -1,0 +1,27 @@
+body{
+    background:#f8fafc;
+    font-family:'Poppins',sans-serif;
+}
+
+.register-box{
+    width:420px;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.register-box h2{
+    font-weight:bold;
+}
+
+.form-control{
+    height:50px;
+    border-radius:10px;
+}
+
+.btn-primary{
+    height:50px;
+    border-radius:10px;
+    font-weight:600;
+}
