@@ -24,8 +24,8 @@ credentials.json
 ca.pem
 *.pem
 
-# Project configuration containing secrets
-config.py
+# Project configuration
+# config.py is safe because it reads secrets from environment variables
 
 # Flask
 instance/
