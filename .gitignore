@@ -1,7 +1,88 @@
-venv/
+# Python
 __pycache__/
-*.pyc
-config.py
-uploads/*
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# Environment variables and secrets
 .env
+.env.*
+!.env.example
+
+# API keys and credentials
+*.key
+secrets.json
+credentials.json
+
+# Aiven SSL certificate
+ca.pem
+*.pem
+
+# Project configuration containing secrets
+config.py
+
+# Flask
+instance/
+.webassets-cache/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Uploaded files
+uploads/
+uploaded_files/
+
+# Logs
+*.log
+
+# VS Code
 .vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Testing and cache
+.pytest_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Build files
+build/
+dist/
+*.egg-info/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

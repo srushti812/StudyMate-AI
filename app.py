@@ -29,7 +29,15 @@ def extract_text_from_pdf(pdf_path):
     return text
 
 def get_db_connection():
-    return mysql.connector.connect(**DB_CONFIG)
+    return mysql.connector.connect(
+        host=DB_CONFIG["host"],
+        user=DB_CONFIG["user"],
+        password=DB_CONFIG["password"],
+        database=DB_CONFIG["database"],
+        port=13334,
+        ssl_ca=DB_CONFIG["ssl"]["ca"],
+        ssl_verify_cert=True
+    )
 
 
 @app.route("/")
