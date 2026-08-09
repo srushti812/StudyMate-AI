@@ -9,6 +9,11 @@ from google import genai
 from google.genai.errors import ClientError
 from werkzeug.security import generate_password_hash, check_password_hash
 
+# Create Aiven SSL certificate file on Render
+if os.getenv("DB_SSL_CA"):
+    with open("/tmp/ca.pem", "w") as f:
+        f.write(os.getenv("DB_SSL_CA"))
+
 app = Flask(__name__)
 UPLOAD_FOLDER = "uploads"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
@@ -34,7 +39,7 @@ def get_db_connection():
         user=DB_CONFIG["user"],
         password=DB_CONFIG["password"],
         database=DB_CONFIG["database"],
-        port=13334,
+        port=DB_CONFIG["port"],
         ssl_ca=DB_CONFIG["ssl"]["ca"],
         ssl_verify_cert=True
     )
