@@ -7,8 +7,8 @@ DB_CONFIG = {
     "database": os.getenv("DB_NAME", "defaultdb"),
     "port": int(os.getenv("DB_PORT", "13334")),
     "ssl": {
-        "ca": "/etc/secrets/ca.pem"
-}
+        "ca": "/tmp/ca.pem"
+    }
 }
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")

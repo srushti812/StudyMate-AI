@@ -9,7 +9,7 @@ from google import genai
 from google.genai.errors import ClientError
 from werkzeug.security import generate_password_hash, check_password_hash
 
-# Create Aiven SSL certificate file on Render
+# Create Aiven SSL certificate file
 if os.getenv("DB_SSL_CA"):
     with open("/tmp/ca.pem", "w") as f:
         f.write(os.getenv("DB_SSL_CA"))
