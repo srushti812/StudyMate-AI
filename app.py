@@ -49,19 +49,27 @@ def get_db_connection():
 def home():
     return render_template("index.html")
 
-
 # User Registration
 @app.route("/register", methods=["POST"])
 def register():
     try:
         data = request.json
-        print(data)
 
-        full_name = data["full_name"]
-        email = data["email"]
-        password = data["password"]
+        if not data:
+            return jsonify({
+                "message": "No registration data received"
+            }), 400
+
+        full_name = data.get("full_name")
+        email = data.get("email")
+        password = data.get("password")
+
+        if not full_name or not email or not password:
+            return jsonify({
+                "message": "All fields are required"
+            }), 400
+
         hashed_password = generate_password_hash(password)
-        
 
         conn = get_db_connection()
         cursor = conn.cursor()
@@ -73,19 +81,22 @@ def register():
 
         cursor.execute(query, (full_name, email, hashed_password))
         conn.commit()
-        print("Inserted rows:",cursor.rowcount)
 
         cursor.close()
         conn.close()
 
         return jsonify({
             "message": "User Registered Successfully"
-        })
+        }), 200
 
     except Exception as e:
+        print("========== REGISTER ERROR ==========")
+        print(type(e).__name__)
+        print(str(e))
+
         return jsonify({
             "error": str(e)
-        })
+        }), 500
 
 @app.route("/login-page")
 def login_page():
